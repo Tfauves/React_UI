@@ -14,21 +14,15 @@ const StyledNavLink = styled(NavLink)`
   border-radius: 20px;
   white-space: nowrap;
   transition: all ease-in-out 0.5s;
-  opacity: ${(props) => (props.hover ? "60%" : "100%")};
+  &:hover {
+    opacity: 0.6;
+  }
   margin: 0px 10px;
 `;
 
 const NavButton = ({ to, label, style }) => {
-  const [hover, setHover] = useState(false);
-
   return (
-    <StyledNavLink
-      to={to}
-      style={style}
-      hover={hover}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
+    <StyledNavLink to={to} style={style}>
       {label}
     </StyledNavLink>
   );

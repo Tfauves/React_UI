@@ -16,11 +16,17 @@ const NavBarContainer = styled.nav`
   height: 60px;
 `;
 
+const NavSectionLogo = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0em 1.2em;
+  margin-left: 60px;
+`;
+
 const NavSection = styled.div`
   display: flex;
   align-items: center;
   padding: 0em 1.2em;
-  ${(props) => props.margin && "margin-left: 60px;"}
 `;
 
 const NavBar = (props) => {
@@ -30,9 +36,9 @@ const NavBar = (props) => {
 
   return (
     <NavBarContainer>
-      <NavSection margin={true}>
+      <NavSectionLogo>
         <NavButton to="/" label="Home" />
-      </NavSection>
+      </NavSectionLogo>
       {/* <NavSection style={{ flex: 1, justifyContent: "flex-end" }}>
         {auth.token ? (
           <div>

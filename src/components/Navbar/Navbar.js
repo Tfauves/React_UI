@@ -6,7 +6,7 @@ import NavButton from "./NavButton";
 
 const NavBarContainer = styled.nav`
   display: flex;
-  background-color: #3a1447;
+  background-color: #323232;
   position: fixed;
   width: 100%;
   z-index: 9999;
@@ -14,6 +14,22 @@ const NavBarContainer = styled.nav`
   left: 0;
   flex-direction: row;
   height: 60px;
+
+  @media (max-width: 1200px) {
+    // Styles for laptops
+  }
+
+  @media (max-width: 992px) {
+    // Styles for tablets
+    flex-direction: column;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    // Styles for mobile devices
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 const NavSectionLogo = styled.div`

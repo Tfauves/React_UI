@@ -1,69 +1,75 @@
 import React from "react";
 import styled from "styled-components";
-import heroImg from "../../assets/heroImg.jpg";
+import heroImg from "../../assets/heroImg.png";
+
+const HeroSection = styled.section`
+  min-height: 100vh;
+  background-color: #0a205a;
+  padding: 20vh 60px 30vh;
+`;
+
+const StyledHeader = styled.h1`
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 75px;
+  line-height: 94px;
+`;
+
+const StyledSubHeader = styled.p`
+  color: #fff;
+  margin-bottom: 60px;
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 25px;
+`;
+
+const Container = styled.div`
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const FlexboxContainer = styled.div`
-  /* Center items both horizontally and vertically */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  /* Ensure the container takes up at least the full viewport height */
-  min-height: 100vh;
-
-  /* Stack items vertically on smaller screens */
-  @media (max-width: 768px) {
-    flex-direction: column;
-    margin-top: 3em;
-  }
 `;
 
-const HeaderContainer = styled.div`
-  flex: 1;
-  max-width: 50%;
-  padding: 10px;
-  font-size: x-large;
+const LeftBlock = styled.div`
+  min-width: 400px;
+  margin-bottom: 60px;
 `;
 
-const HeroImgContainer = styled.div`
-  flex: 1;
-  padding: 10px;
-
-  /* Media query for screens with a minimum width of 1200px */
-  @media (min-width: 1200px) {
-    padding: 30px;
-    margin-top: 60px;
-    margin-right: 60px;
-  }
+const RightBlock = styled.div`
+  min-width: 400px;
+  margin-right: 60px;
 `;
 
 const HeroImg = styled.img`
-  /* Make the image responsive to its container */
-  max-width: 100%;
-
-  /* Remove extra spacing under the image */
-  display: block;
-  border: 1px solid #ccc;
-  margin: 0 auto; /* Center the image horizontally */
-
-  /* Adjust the top margin on smaller screens */
-  @media (max-width: 768px) {
-    margin-top: 1em;
-  }
+  max-width: 80%;
 `;
 
 const Hero = () => {
   return (
-    <div>
-      <FlexboxContainer>
-        <HeaderContainer>
-          <h1>This will be a heading</h1>
-        </HeaderContainer>
-        <HeroImgContainer>
-          <HeroImg src={heroImg} />
-        </HeroImgContainer>
-      </FlexboxContainer>
-    </div>
+    <HeroSection>
+      <Container>
+        <FlexboxContainer>
+          <LeftBlock>
+            <StyledHeader>Space is complex</StyledHeader>
+            <StyledSubHeader>
+              Don't let your console upscale space complexity
+            </StyledSubHeader>
+          </LeftBlock>
+          <RightBlock>
+            <img src={heroImg} />
+          </RightBlock>
+        </FlexboxContainer>
+      </Container>
+    </HeroSection>
   );
 };
 export default Hero;

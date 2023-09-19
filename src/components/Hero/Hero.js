@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import heroImg from "../../assets/heroImg.png";
+import heroBg from "../../assets/drab-space-bg.jpg";
 
 const HeroSection = styled.section`
-  min-height: 100vh;
-  background-color: #0a205a;
-  padding: 20vh 60px 30vh;
+  min-height: 70vh;
+  padding: 20vh 60px;
+  background-image: url(${heroBg});
+  background-size: cover;
 `;
 
 const StyledHeader = styled.h1`
@@ -37,6 +39,21 @@ const FlexboxContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 1200px) {
+    // Styles for laptops
+  }
+
+  @media (max-width: 992px) {
+    // Styles for tablets
+    flex-direction: column;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    // Styles for mobile devices
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 const LeftBlock = styled.div`
@@ -59,13 +76,13 @@ const Hero = () => {
       <Container>
         <FlexboxContainer>
           <LeftBlock>
-            <StyledHeader>Space is complex</StyledHeader>
+            <StyledHeader>Drab Space Consoles</StyledHeader>
             <StyledSubHeader>
-              Don't let your console upscale space complexity
+              Space is complex. Your console shouldn't be.
             </StyledSubHeader>
           </LeftBlock>
           <RightBlock>
-            <img src={heroImg} />
+            <HeroImg src={heroImg} />
           </RightBlock>
         </FlexboxContainer>
       </Container>
